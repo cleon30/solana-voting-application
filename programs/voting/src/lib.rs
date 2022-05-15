@@ -57,15 +57,15 @@ mod voting {
     pub fn get_ticket(ctx: Context<Claim>) ->Result<()>{
         let voting: &mut Account<Voting> = &mut ctx.accounts.voting;
         let voter: &mut Signer = &mut ctx.accounts.voter;
-
+        Ok(())
         //transfer lamports to the lottery account
 
     }
     pub fn yes(ctx: Context) -> Result<()>{
-
+        Ok(())
     }
     pub fn no(ctx: Context) -> Result<()>{
-
+        Ok(())
     }
 
     //Oracle checks if today It'S before than Deadline ////
