@@ -1,19 +1,18 @@
 use anchor_lang::prelude::*;
-
+/// Pending to modify Program ID :)
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
-#[program]
+#[program] // declare program to Rust
+
 mod voting {
     use super::*;
     ///init ///
-    pub fn initialize(ctx: Context<Initialize>, ticket: u64) -> Result<()> {
+    pub fn initialize(ctx: Context<Initialize>, ticket: u64) -> Result<()> { //let's initialize our Voting Account
         let voting: &mut Account<Voting> = &mut ctx.accounts.voting;        
         voting.authority = ctx.accounts.admin.key(); 
-        voting.claimed = 0;               
-        voting.countyes = 0;
-        voting.countno = 0;            
+        voting.claimed = 0; //This will be a count that will tell us if the user have request a ticket               
+        voting.countyes = 0;           
         voting.ticket = voting;
-        voting.oracle = oracle_pubkey;
         voting.winner = winner;
 
         Ok(())
